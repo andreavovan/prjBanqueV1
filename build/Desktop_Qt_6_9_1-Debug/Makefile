@@ -53,12 +53,15 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../../comptebancaire.cpp \
+		../../compteepargne.cpp \
 		../../main.cpp \
 		../../menu.cpp 
 OBJECTS       = comptebancaire.o \
+		compteepargne.o \
 		main.o \
 		menu.o
 DIST          = ../../CompteBancaire.txt \
+		../../CompteEpargne.txt \
 		/opt/Qt/6.9.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/6.9.1/gcc_64/mkspecs/common/unix.conf \
 		/opt/Qt/6.9.1/gcc_64/mkspecs/common/linux.conf \
@@ -363,7 +366,9 @@ DIST          = ../../CompteBancaire.txt \
 		/opt/Qt/6.9.1/gcc_64/mkspecs/features/yacc.prf \
 		/opt/Qt/6.9.1/gcc_64/mkspecs/features/lex.prf \
 		../../../../ProjetBanque.pro comptebancaire.h \
+		compteepargne.h \
 		menu.h ../../comptebancaire.cpp \
+		../../compteepargne.cpp \
 		../../main.cpp \
 		../../menu.cpp
 QMAKE_TARGET  = ProjetBanque
@@ -1032,7 +1037,13 @@ compiler_clean:
 comptebancaire.o: ../../comptebancaire.cpp ../../comptebancaire.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o comptebancaire.o ../../comptebancaire.cpp
 
-main.o: ../../main.cpp ../../menu.h
+compteepargne.o: ../../compteepargne.cpp ../../compteepargne.h \
+		../../comptebancaire.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o compteepargne.o ../../compteepargne.cpp
+
+main.o: ../../main.cpp ../../menu.h \
+		../../compteepargne.h \
+		../../comptebancaire.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../main.cpp
 
 menu.o: ../../menu.cpp ../../menu.h

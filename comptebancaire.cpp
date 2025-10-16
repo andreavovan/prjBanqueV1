@@ -35,7 +35,17 @@ void CompteBancaire::Deposer(float _montant)
  */
 bool CompteBancaire::Retirer(float _montant)
 {
-    return solde = solde - _montant ;
+    bool ok = false ;
+    if(_montant>=0){
+        if ((solde-_montant)>=_montant){
+            ok = true;
+            if(ok==true)
+            {
+                solde=solde-_montant;
+            }
+        }
+    }return ok;
+
 }
 
 /**
