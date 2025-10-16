@@ -1,0 +1,4 @@
+#ifndef COMPTEBANCAIRE_H
+#define COMPTEBANCAIRE_H
+
+#endif // COMPTEBANCAIRE_H
