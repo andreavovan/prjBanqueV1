@@ -8,7 +8,8 @@
 #include <iostream>
 #include "menu.h"
 //#include "comptebancaire.h"
-#include "compteepargne.h"
+//#include "compteepargne.h"
+#include "compteclient.h"
 
 using namespace std;
 
@@ -47,7 +48,7 @@ int main()
     return 0;
     */
 
-    Menu m("CompteEpargne.txt");
+    /*Menu m("CompteEpargne.txt");
     double montant ;
     CompteEpargne c;
     int reponse;
@@ -81,4 +82,31 @@ int main()
 
     }while(reponse != 5 );
     return 0;
+    */
+
+    Menu m("CompteClient.txt");
+    double montant ;
+    CompteClient c("Albert",1);
+    int reponse;
+
+    do{
+        reponse = m.AfficherEtRecupererReponse();
+        switch(reponse)
+        {
+        case 1:  // Ouvrir un compte epargne
+            c.OuvrirCompteargne();
+            break;
+        case 2: // Gérer compte bancaire
+            c.GererCompteBancaire();
+            break;
+        case 3: // Gérer compte epargne
+            c.GererCompteEpargne();
+            break;
+        default:
+            break;
+        }
+
+    }while(reponse != 4 );
+    return 0;
+
 }

@@ -26,9 +26,9 @@ private:
 public:
     CompteClient(std::string _nom , int _numero);
     ~CompteClient();
-    void  OuvrirCompteargne;
-    void  GererCompteEpargne;
-    void  GererCompteBancaire;
+    void  OuvrirCompteargne();
+    void  GererCompteEpargne();
+    void  GererCompteBancaire();
 };
 
 #endif // COMPTECLIENT_H
